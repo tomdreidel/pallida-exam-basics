@@ -1,5 +1,11 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class FavouriteAnimals {
+
   public static void main(String[] args) {
     // The program's aim is to collect your favourite animals and store them in a text file.
     // There is a given text file called '''favourites.txt''', it will contain the animals
@@ -12,21 +18,40 @@ public class FavouriteAnimals {
     // The program should only save animals, no need to print them
 
     if (args.length == 0) {
-      System.out.println("Usage: java FavouriteAnimals [animal] [animal] ...");
-    }
-    else if (args.length == 1) {
-      System.out.println("Your favourite animal have been placed to favourites.txt");
+      System.out.println("\nUsage: java FavouriteAnimals [animal] [animal] ...\n");
+    } else if (args.length == 1) {
+      System.out.println("\nYour favourite animal have been placed to favourites.txt\n");
       storeAnimals(args);
-    }
-    else {
-      System.out.println("Your favourite animals have been placed to favourites.txt");
+    } else {
+      System.out.println("\nYour favourite animals have been placed to favourites.txt\n");
       storeAnimals(args);
     }
   }
 
   private static void storeAnimals(String[] args) {
 
-    int argsCount = args.length;
-    
+    Path filePath = Paths.get("/Users/tamasredly/greenfox/gf-exams/exam-1-live/pallida-exam-basics/favouriteanimals/favourites.txt");
+    ArrayList<String> myAnimals = new ArrayList<>();
+    for (int i = 0; i < args.length; i++) {
+      if (!myAnimals.contains(args[i])) {
+        myAnimals.add(args[i]);
+      }
+    }
+
+    if (!Files.exists(filePath)) {
+      try {
+        Files.createFile(filePath);
+      } catch (IOException e) {
+        System.out.println("\nCould not create file\n");
+        return;
+      }
+    }
+
+    try {
+      Files.write(filePath, myAnimals);
+    } catch (IOException e) {
+      System.out.println("\nCould not write file\n");
+      return;
+    }
   }
 }
