@@ -1,8 +1,6 @@
 public class TakeMeToThe {
   static CandyShop candyShop;
 
-
-
   public static void main(String[] args) {
     // We run a Candy shop where we sell candies and lollipops
     // One lollipop's price is 10$
@@ -12,7 +10,7 @@ public class TakeMeToThe {
     // we can raise their prices with a given percentage
 
     // Create a CandyShop class
-    // It can store sugar and money as income. The constructor should take the amount of sugar in gramms.
+    // It can store sugar and money as income. The constructor should take the amount of sugar in grams.
     // we can create lollipops and candies store them in the CandyShop's storage
     // If we create a candie or lollipop the CandyShop's sugar amount gets reduced by the amount needed to create the sweets
     // We can raise the prices of all candies and lollipops with a given percentage
@@ -29,19 +27,19 @@ public class TakeMeToThe {
     candyShop.createSweets(CandyShop.LOLLIPOP);
     System.out.println(candyShop);
     // Should print out:
-    // Invetory: 2 candies, 2 lollipops, Income: 0$, Sugar: 270gr
+    // Inventory: 2 candies, 2 lollipops, Income: 0$, Sugar: 270gr
     candyShop.sell(CandyShop.CANDY, 1);
     System.out.println(candyShop);
     // Should print out:
-    // "Invetory: 1 candies, 2 lollipops, Income: 20$, Sugar: 285gr"
+    // "Inventory: 1 candies, 2 lollipops, Income: 20$, Sugar: 285gr"
     candyShop.raise(5);
     candyShop.sell(CandyShop.LOLLIPOP, 1);
     System.out.println(candyShop);
     // Should print out:
-    // "Invetory: 1 candies, 1 lollipops, Income: 35$, Sugar: 285gr"
+    // "Inventory: 1 candies, 1 lollipops, Income: 35$, Sugar: 285gr"
     candyShop.buySugar(300);
     System.out.println(candyShop);
     // Should print out:
-    // "Invetory: 1 candies, 1 lollipops, Income: 5$, Sugar: 315gr"
+    // "Inventory: 1 candies, 1 lollipops, Income: 5$, Sugar: 315gr"
   }
 }
