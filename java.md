@@ -12,7 +12,6 @@
 - **Don't just copy-paste** your answers and solutions, use your own words instead.
 - **Don't push your work** to GitHub until your mentor announces that the time is up
 
-
 # Tasks
 ## 1-3. Complete the following tasks: (~90 mins)
 - [Uniques Characters](src/UniqueChars.java)
@@ -32,8 +31,18 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+
+**Functions** are defined code blocks that have unique name, can take parameters and will run the code
+what is inside when called from elsewhere. They may or may not return data, as needed.
+**Methods** are functions of objects, connected to them, can be interpreted only in the context of the
+object itself. The default parameter of these special functions is the object itself, from they are called.
+Since Java is a heavily object oriented language, it has no functions, only methods. In Java, basically
+everything is an object, except primitive data types but these don't need functions, they can only understand operators.
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+
+When you need to create an object, first, you create a class. It is only the plan (or the blueprint :-) ) of the object.
+If you want to use such an object, you need to create - instantiate - one first. The **constructor** is a default special
+method which does exactly this. It creates an instance of the object. If the object has field variables, you can set
+default values for these in the constructor. Also, you can add more fields to the object if it is needed.
