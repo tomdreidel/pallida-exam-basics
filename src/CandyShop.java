@@ -15,7 +15,7 @@ public class CandyShop extends ArrayList<Product> {
 
   public void createSweets(Product product) {
     this.add(product);
-    this.sugarLevel -= product.price;
+    this.sugarLevel -= product.sugarContent;
   }
 
   public void sell (Product product, int number) {
