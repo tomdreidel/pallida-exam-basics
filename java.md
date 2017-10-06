@@ -16,7 +16,7 @@
 # Tasks
 ## 1-3. Complete the following tasks: (~90 mins)
 - [Uniques Characters](src/UniqueChars.java)
-- [Favourite Animals](favouriteanimals/FavouriteAnimals.java)
+- [Favourite Animals](src/FavouriteAnimals.java)
 - [Candy Shop](candyshop/TakeMeToThe.java)
 
 ### Acceptance criteria
