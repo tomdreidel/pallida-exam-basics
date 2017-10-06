@@ -19,17 +19,12 @@ public class FavouriteAnimals {
 
     if (args.length == 0) {
       System.out.println("\nUsage: java FavouriteAnimals [animal] [animal] ...\n");
-    } else if (args.length == 1) {
-      System.out.println("\nYour favourite animal have been placed to favourites.txt\n");
-      storeAnimals(args);
     } else {
-      System.out.println("\nYour favourite animals have been placed to favourites.txt\n");
-      storeAnimals(args);
+      System.out.println(storeAnimals(args));
     }
   }
 
-  private static void storeAnimals(String[] args) {
-
+  private static String storeAnimals(String[] args) {
     Path filePath = Paths.get("/Users/tamasredly/greenfox/gf-exams/exam-1-live/pallida-exam-basics/favouriteanimals/favourites.txt");
     ArrayList<String> myAnimals = new ArrayList<>();
     for (int i = 0; i < args.length; i++) {
@@ -42,16 +37,15 @@ public class FavouriteAnimals {
       try {
         Files.createFile(filePath);
       } catch (IOException e) {
-        System.out.println("\nCould not create file\n");
-        return;
+        return "\nCould not create file\n";
       }
     }
 
     try {
       Files.write(filePath, myAnimals);
     } catch (IOException e) {
-      System.out.println("\nCould not write file\n");
-      return;
+      return "\nCould not write file\n";
     }
+    return "\nYour favourite animal" + ((myAnimals.size() > 1) ? "s" : "") + " have been placed to favourites.txt\n";
   }
 }

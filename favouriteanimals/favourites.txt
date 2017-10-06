@@ -1,3 +1,8 @@
 kacsa
 liba
+sas
 kecske
+vidra
+kutya
+macska
+hal
